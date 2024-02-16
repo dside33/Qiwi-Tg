@@ -33,7 +33,7 @@ async def start(message: types.Message):
         if not db.user_exists(message.from_user.id):
             db.add_user(message.from_user.id)
 
-        await bot.send_message(message.from_user.id, f"Ты жопа:  {db.user_money(message.from_user.id)}", reply_markup=nav.topUpMenu)
+        await bot.send_message(message.from_user.id, f"Здравствуйте,:  {db.user_money(message.from_user.id)}", reply_markup=nav.topUpMenu)
 
 @dp.message_handler()
 async def bot_mess(message: types.Message):
@@ -50,7 +50,7 @@ async def bot_mess(message: types.Message):
             else:
                 await bot.send_message(message.from_user.id, "Дай больше")
         else:
-            await bot.send_message(message.from_user.id, "Сука! Число мне дай")
+            await bot.send_message(message.from_user.id, "Необходимо целое число")
 
 
 
